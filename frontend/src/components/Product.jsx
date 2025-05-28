@@ -20,10 +20,6 @@ const [product, setProduct] = useState(null);
     fetchProduct();
   }, [id]);
 
-
-
-
-
   if (!product) {
     return (
       <h2 className="text-center" style={{ padding: "10rem" }}>
@@ -38,23 +34,23 @@ const [product, setProduct] = useState(null);
         <div className="right-column">
           <div className="product-description">
             <span>{product.category}</span>
-            <h1>{product.name}</h1>
+            <h1>{product.productName}</h1>
             <h5>{product.brand}</h5>
-            <p>{product.description}</p>
+            <p>{product.desc}</p>
           </div>
 
           <div className="product-price">
-            <span>{"$" + product.price}</span>
+            <span>{"$" + product.productPrice}</span>
             <button
-              className={`cart-btn ${!product.productAvailable ? "disabled-btn" : ""}`}
-              disabled={!product.productAvailable}
+              className={`cart-btn ${!product.available ? "disabled-btn" : ""}`}
+              disabled={!product.available}
             >
-              {product.productAvailable ? "Add to cart" : "Out of Stock"}
+              {product.available ? "Add to cart" : "Out of Stock"}
             </button>
             <h6>
               Stock Available :{" "}
               <i style={{ color: "green", fontWeight: "bold" }}>
-                {product.stockQuantity}
+                {product.quantity}
               </i>
             </h6>
             <p className="release-date">

@@ -20,7 +20,7 @@ public class ProductService {
     }
 
     public Product getProductById(int id) {
-        return repo.findById(id).orElse(new Product(0,"No item",0));
+        return repo.findById(id).orElse(new Product());
     }
 
 

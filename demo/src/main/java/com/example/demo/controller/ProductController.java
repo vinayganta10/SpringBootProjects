@@ -3,6 +3,8 @@ package com.example.demo.controller;
 import com.example.demo.model.Product;
 import com.example.demo.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -15,13 +17,17 @@ public class ProductController {
     @Autowired
     ProductService service;
     @GetMapping("/products")
-    public List<Product> getProducts(){
-        return service.getProductList();
+    public ResponseEntity<List<Product>> getProducts(){
+        return new ResponseEntity<>(service.getProductList(), HttpStatus.OK);
     }
 
     @GetMapping("/product/{id}")
-    public Product getProductById(@PathVariable int id){
-        return service.getProductById(id);
+    public ResponseEntity<Product> getProductById(@PathVariable int id){
+        Product product = service.getProductById(id);
+        if(product==null){
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+        return new ResponseEntity<>(product,HttpStatus.OK);
     }
 
     @PostMapping("/product")

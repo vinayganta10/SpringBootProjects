@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import AppContext from "../Context/Context";
@@ -46,7 +46,7 @@ const Home = () => {
         {products.map((product) => (
           <div
             className="card mb-3"
-            key={product.id}
+            key={product.productId}
             style={{
               width: "18rem",
               height: "14rem",
@@ -57,7 +57,7 @@ const Home = () => {
             }}
           >
             <Link
-              to={`/product/${product.id}`}
+              to={`/product/${product.productId}`}
               style={{ textDecoration: "none", color: "inherit" }}
             >
               <div
@@ -72,7 +72,7 @@ const Home = () => {
               >
                 <div>
                   <h5 className="card-title" style={{ margin: "0 0 10px 0" }}>
-                    {product.name.toUpperCase()}
+                    {product.productName.toUpperCase()}
                   </h5>
                   <span className="card-brand">
                     by <i style={{ fontStyle: "italic" }}>{product.brand}</i>
@@ -83,7 +83,7 @@ const Home = () => {
                     className="card-text"
                     style={{ fontWeight: "600", margin: "10px 0" }}
                   >
-                    {"$" + product.price}
+                    {"$" + product.productPrice}
                   </h5>
                   <button
                     className="btn btn-primary"
