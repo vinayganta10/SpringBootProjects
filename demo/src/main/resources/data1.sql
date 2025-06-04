@@ -1,4 +1,4 @@
-INSERT INTO PRODUCT (product_Name, product_Price, brand, desc, category, release_Date, available, quantity) VALUES
+INSERT INTO PRODUCT (name, price, brand, description, category, release_Date, product_available, stock_Quantity) VALUES
 ('Laptop X1', 89999.99, 'Lenovo', 'High performance laptop', 'Electronics', CURRENT_DATE, TRUE, 10),
 ('Smartphone Z5', 45999.50, 'Samsung', 'Latest smartphone model', 'Mobile', CURRENT_DATE, TRUE, 25),
 ('Gaming Mouse', 2499.00, 'Logitech', 'High DPI gaming mouse', 'Accessories', CURRENT_DATE, TRUE, 50),

@@ -1,5 +1,6 @@
 package com.example.demo.service;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -7,6 +8,7 @@ import com.example.demo.model.Product;
 import com.example.demo.repository.ProductRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
 
 @Service
 public class ProductService {
@@ -24,8 +26,11 @@ public class ProductService {
     }
 
 
-    public void addProduct(Product product) {
-        repo.save(product);
+    public Product addProduct(Product product, MultipartFile imageFile) throws IOException {
+        product.setImageName(imageFile.getOriginalFilename());
+        product.setImageType(imageFile.getContentType());
+        product.setImageDate(imageFile.getBytes());
+        return repo.save(product);
     }
 
 
