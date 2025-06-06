@@ -50,14 +50,21 @@ public class ProductController {
                 .body(imageDate);
     }
 
-    @PutMapping("/product")
-    public void updateProduct(@RequestBody Product product){
-        service.updateProduct(product);
+    @PutMapping("/product/{id}")
+    public ResponseEntity<?> updateProduct(@PathVariable int id,@RequestPart Product product,@RequestPart MultipartFile imageFile) throws IOException {
+        Product product1 = service.updateProduct(id,product,imageFile);
+        return new ResponseEntity<>(product1,HttpStatus.OK);
     }
 
     @DeleteMapping("/product/{id}")
-    public String deleteProduct(@PathVariable int id){
-        service.deleteProduct(id);
-        return "Product deleted";
+    public ResponseEntity<?> deleteProduct(@PathVariable int id){
+        try{
+            service.deleteProduct(id);
+            return new ResponseEntity<>(HttpStatus.OK);
+        }
+        catch(Exception e){
+            return new ResponseEntity<>(e.getMessage(),HttpStatus.NOT_FOUND);
+        }
+
     }
 }
