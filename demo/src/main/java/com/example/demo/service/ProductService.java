@@ -7,6 +7,7 @@ import java.util.List;
 import com.example.demo.model.Product;
 import com.example.demo.repository.ProductRepo;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -45,5 +46,9 @@ public class ProductService {
             repo.deleteById(id);
         }
         else throw new Exception();
+    }
+
+    public List<Product> searchByKeyword(String keyword){
+        return repo.searchByKeyword(keyword);
     }
 }
