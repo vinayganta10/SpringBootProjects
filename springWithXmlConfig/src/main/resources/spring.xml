@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean id="alien" class="org.example.app.Alien" autowire="constructor">
+        <!--setter injection -->
+        <!--        <property name="laptop" ref="laptop"></property> -->
+        <!--constructor injection-->
+        <!--        <constructor-arg ref="laptop"/>-->
+    </bean>
+    <bean id="desktop" class="org.example.app.Desktop" primary="true"/>
+    <bean id="laptop" class="org.example.app.Laptop"/>
+</beans>
