@@ -35,7 +35,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "master",
     "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/Users/DELL/Documents/Vinay/SpringBootProjects/BasicProject1/Spring",
+    "last_opened_file_path": "C:/Users/DELL/Documents/Vinay/SpringBootProjects/BasicProject1/demo",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2"
@@ -50,16 +50,6 @@
     </key>
   </component>
   <component name="RunManager">
-    <configuration default="true" type="GroovyScriptRunConfiguration" factoryName="Groovy">
-      <setting name="path" value="" />
-      <setting name="vmparams" value="" />
-      <setting name="params" value="" />
-      <setting name="workDir" value="file://$PROJECT_DIR$" />
-      <setting name="debug" value="false" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration default="true" type="JetRunConfigurationType">
       <module name="Spring" />
       <method v="2">
